@@ -1,8 +1,9 @@
 export interface ProjectDefinition {
   title: string;
+  overview: string;
+  description?: string;
   type: string;
-  url: string;
-  description: string;
+  url?: string;
   image: string;
   video: string;
   slug: string;

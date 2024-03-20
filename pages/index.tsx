@@ -48,7 +48,7 @@ export async function getStaticProps() {
 
     return {
       title: data.title,
-      description: data.description,
+      overview: data.overview,
       url: data.url,
 
       type: data.type,

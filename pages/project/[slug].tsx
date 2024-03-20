@@ -5,6 +5,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Navigation from "@/components/layout/navigation";
 import Link from "next/link";
+import { Karla } from "next/font/google";
+
+const karla = Karla({ preload: false });
 
 export default function ProjectSlug(props: {
   frontMatter: any;
@@ -12,15 +15,36 @@ export default function ProjectSlug(props: {
   name: string;
 }) {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className={`max-w-7xl mx-auto ${karla.className}`}>
       <title>{props.frontMatter.title}</title>
+
       <Navigation name={props.name} />
 
-      <h1 className="mb-3 text-4xl font-bold">{props.frontMatter.title}</h1>
-      <Link href={props.frontMatter.url} target="_blank" className="underline">
-        Go to project
-      </Link>
-      <MDXRemote {...props.mdxSource} />
+      <article className="flex flex-col mt-16 max-w-5xl mx-auto">
+        <section className="flex flex-col justify-center items-center text-center">
+          <h1 className="mb-3 text-4xl font-bold text-[#4d4d4d]">
+            {props.frontMatter.title}
+          </h1>
+          <p className="text-lg text-[#000000a3]">
+            {props.frontMatter.description}
+          </p>
+          <Link
+            href={props.frontMatter.url}
+            target="_blank"
+            className="underline"
+          >
+            Link to project
+          </Link>
+        </section>
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <section className="flex flex-col">
+          Table of Contents
+          <Link href="#overview">Overview</Link>
+          <Link href="#description">Description</Link>
+          <Link href="#type">Type</Link>
+        </section>
+        <MDXRemote {...props.mdxSource} />
+      </article>
     </div>
   );
 }

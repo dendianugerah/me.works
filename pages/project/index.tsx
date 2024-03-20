@@ -16,7 +16,7 @@ export default function Project({ props }: ProjectCardsProps) {
           key={project.slug}
           type={project.type}
           title={project.title}
-          description={project.description}
+          overview={project.overview}
           slug={`/project/${project.slug}`}
           image={project.image}
           video={project.video}
@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
     return {
       title: data.title,
-      description: data.description,
+      overview: data.overview,
       type: data.type,
       slug: file.split(".")[0],
       image: data.image ? data.image : null,
