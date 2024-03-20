@@ -12,6 +12,9 @@ export function About({ background, about, awards }: AboutDefinition) {
           <h2 className="mb-3 text-lg">Achievement</h2>
           <p className="max-w-lg text-[#7a7a87] text-md">{awards}</p>
         </div>
+        <div>
+          <h2 className="mb-3 text-lg">Thought</h2>
+        </div>
       </div>
     </section>
   );

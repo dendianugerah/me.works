@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Navigation from "@/components/layout/navigation";
+import Link from "next/link";
 
 export default function ProjectSlug(props: {
   frontMatter: any;
@@ -12,13 +13,18 @@ export default function ProjectSlug(props: {
 }) {
   return (
     <div className="max-w-7xl mx-auto">
-      <Navigation name={props.name} />
       <title>{props.frontMatter.title}</title>
+      <Navigation name={props.name} />
+
       <h1 className="mb-3 text-4xl font-bold">{props.frontMatter.title}</h1>
+      <Link href={props.frontMatter.url} target="_blank" className="underline">
+        Go to project
+      </Link>
       <MDXRemote {...props.mdxSource} />
     </div>
   );
 }
+
 export async function getStaticPaths() {
   let files = fs.readdirSync(path.resolve(process.cwd(), "data/project"));
 

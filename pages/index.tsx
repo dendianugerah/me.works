@@ -49,6 +49,8 @@ export async function getStaticProps() {
     return {
       title: data.title,
       description: data.description,
+      url: data.url,
+
       type: data.type,
       slug: file.split(".")[0],
       image: data.image ? data.image : null,
