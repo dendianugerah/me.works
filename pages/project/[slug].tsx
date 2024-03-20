@@ -31,17 +31,31 @@ export default function ProjectSlug(props: {
           <Link
             href={props.frontMatter.url}
             target="_blank"
-            className="underline"
+            className="underline text-[#D97126BF]"
           >
             Link to project
           </Link>
+          <div className="text-left w-full text-sm">
+            <p className="justify-none items-start">
+              Tech Stack:{" "}
+              <span className="text-[#D97126BF]">{props.frontMatter.tech_stack}</span>
+            </p>
+          </div>
         </section>
-        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <section className="flex flex-col">
-          Table of Contents
-          <Link href="#overview">Overview</Link>
-          <Link href="#description">Description</Link>
-          <Link href="#type">Type</Link>
+        <hr className="h-px mb-8 mt-4 bg-[#4d4d4d] border-0" />
+        <section className="flex flex-col mb-8">
+          <h2 className="text-lg font-semibold mb-2">Table of Contents</h2>
+          <ul className="list-none text-[#D97126BF]">
+            <li>
+              <Link href="#project-overview">Project Overview</Link>
+            </li>
+            <li>
+              <Link href="#lessons-learned">What I've Learned</Link>
+            </li>
+            <li>
+              <Link href="#future-improvements">What's Next?</Link>
+            </li>
+          </ul>
         </section>
         <MDXRemote {...props.mdxSource} />
       </article>
