@@ -18,7 +18,7 @@ export default function Home({
 
   return (
     <main className={`${karla.className}`}>
-      <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 sm:px-0">
+      <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 xl:px-0">
         <div className="max-w-7xl mx-auto">
           <Navigation name={name} />
           <div className="flex flex-col justify-center items-center text-center whitespace-pre-wrap max-w-6xl mx-auto">

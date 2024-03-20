@@ -15,13 +15,13 @@ export default function ProjectSlug(props: {
   name: string;
 }) {
   return (
-    <div className={`max-w-7xl mx-auto ${karla.className}`}>
+    <div className={`max-w-7xl mx-auto ${karla.className} px-4 xl:px-0`}>
       <title>{props.frontMatter.title}</title>
 
       <Navigation name={props.name} />
 
       <article className="flex flex-col mt-16 max-w-5xl mx-auto">
-        <section className="flex flex-col justify-center items-center text-center">
+        <section className="flex flex-col justify-center items-center text-justify sm:text-center">
           <h1 className="mb-3 text-4xl font-bold text-[#4d4d4d]">
             {props.frontMatter.title}
           </h1>
@@ -35,10 +35,12 @@ export default function ProjectSlug(props: {
           >
             Link to project
           </Link>
-          <div className="text-left w-full text-sm">
+          <div className="text-left w-full text-sm mt-2 sm:mt-0">
             <p className="justify-none items-start">
               Tech Stack:{" "}
-              <span className="text-[#D97126BF]">{props.frontMatter.tech_stack}</span>
+              <span className="text-[#D97126BF]">
+                {props.frontMatter.tech_stack}
+              </span>
             </p>
           </div>
         </section>
