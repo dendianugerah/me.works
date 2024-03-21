@@ -52,10 +52,10 @@ export default function ProjectSlug(props: {
               <Link href="#project-overview">Project Overview</Link>
             </li>
             <li>
-              <Link href="#lessons-learned">What I've Learned</Link>
+              <Link href="#lessons-learned">What I&apos;ve Learned</Link>
             </li>
             <li>
-              <Link href="#future-improvements">What's Next?</Link>
+              <Link href="#future-improvements">What&apos;s Next?</Link>
             </li>
           </ul>
         </section>
