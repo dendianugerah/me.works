@@ -4,7 +4,8 @@ import Project from "@/pages/project";
 import { Karla } from "next/font/google";
 import { Navigation, About } from "@/components/layout/_index";
 import { ProjectDefinition, ProfileDefinition } from "@/definition";
-
+import { Application } from "@splinetool/runtime";
+import { useEffect } from "react";
 const karla = Karla({ preload: false });
 
 export default function Home({
@@ -16,14 +17,24 @@ export default function Home({
 }) {
   const { name, introduction, background, about, awards } = profile;
 
+  useEffect(() => {
+    const canvas = document.getElementById("canvas3d");
+    const app = new Application(canvas as HTMLCanvasElement);
+    app.load("https://prod.spline.design/RWop9YYzBLiGqqOu/scene.splinecode");
+  }, []);
+
   return (
     <main className={`${karla.className}`}>
       <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 xl:px-0">
         <div className="max-w-7xl mx-auto">
           <Navigation name={name} />
           <div className="flex flex-col justify-center items-center text-center whitespace-pre-wrap max-w-6xl mx-auto">
-            <span className="text-xl">Hello.</span>
+            <span className="text-[10px] sm:text-xl">Hello.</span>
             <span className="text-xl sm:text-4xl">{introduction}</span>
+          </div>
+
+          <div className="flex justify-center items-center mt-4">
+            <canvas id="canvas3d" className="w-full h-full" />
           </div>
           <Project projects={projects} />
         </div>
