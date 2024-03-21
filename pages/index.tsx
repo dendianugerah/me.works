@@ -25,7 +25,7 @@ export default function Home({
             <span className="text-xl">Hello.</span>
             <span className="text-xl sm:text-4xl">{introduction}</span>
           </div>
-          <Project props={projects} />
+          <Project projects={projects} />
         </div>
       </div>
       <div className="pt-16">

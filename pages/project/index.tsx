@@ -4,13 +4,13 @@ import matter from "gray-matter";
 import fs from "fs";
 
 interface ProjectCardsProps {
-  props: ProjectDefinition[];
+  projects: ProjectDefinition[];
 }
 
-export default function Project({ props }: ProjectCardsProps) {
+export default function Project({ projects }: ProjectCardsProps) {
   return (
     <div className="md:flex md:flex-wrap md:gap-16 md:justify-between ">
-      {props.map((project, index) => (
+      {projects.map((project, index) => (
         <ProjectCard
           size={index % 4 === 0 || index % 4 === 3 ? "small" : "large"}
           key={project.slug}
