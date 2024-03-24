@@ -6,6 +6,7 @@ import { Navigation, About } from "@/components/layout/_index";
 import { ProjectDefinition, ProfileDefinition } from "@/definition";
 import { Application } from "@splinetool/runtime";
 import { useEffect } from "react";
+import Link from "next/link";
 const karla = Karla({ preload: false });
 
 export default function Home({
@@ -17,11 +18,11 @@ export default function Home({
 }) {
   const { name, introduction, background, about, awards } = profile;
 
-  useEffect(() => {
-    const canvas = document.getElementById("canvas3d");
-    const app = new Application(canvas as HTMLCanvasElement);
-    app.load("https://prod.spline.design/RWop9YYzBLiGqqOu/scene.splinecode");
-  }, []);
+  // useEffect(() => {
+  //   const canvas = document.getElementById("canvas3d");
+  //   const app = new Application(canvas as HTMLCanvasElement);
+  //   app.load("https://prod.spline.design/RWop9YYzBLiGqqOu/scene.splinecode");
+  // }, []);
 
   return (
     <main className={`${karla.className}`}>
@@ -32,11 +33,37 @@ export default function Home({
             <span className="text-[10px] sm:text-xl">Hello.</span>
             <span className="text-xl sm:text-4xl">{introduction}</span>
           </div>
-
-          <div className="flex justify-center items-center mt-4">
+          {/* <div className="flex justify-center items-center mt-4">
             <canvas id="canvas3d" className="w-full h-full" />
-          </div>
+          </div> */}
           <Project projects={projects} />
+          <h2 className="mt-16 text-xl sm:text-4xl">
+            These projects are just a snapshot of my recent work. I&apos;d love
+            to show you a wider range in person. <b>Don&apos;t be a stranger</b>
+            , we can meet up for coffee or tea — your choice!
+          </h2>
+          <span className=" text-[#7a7a87] flex flex-col flex-wrap items-start">
+            <Link
+              href="https://www.linkedin.com/in/dendianugerah/"
+              target="_blank"
+              className="hover:underline"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              href="https://github.com/dendianugerah"
+              target="_blank"
+              className="hover:underline"
+            >
+              Github
+            </Link>
+            <Link
+              href="mailto:dendianugrah40@gmail.com"
+              className="hover:underline"
+            >
+              Email
+            </Link>
+          </span>
         </div>
       </div>
       <div className="pt-16">

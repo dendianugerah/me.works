@@ -15,7 +15,9 @@ export default function ProjectSlug(props: {
   name: string;
 }) {
   return (
-    <div className={`max-w-7xl mx-auto ${karla.className} px-4 xl:px-0`}>
+    <div
+      className={`max-w-7xl mx-auto pb-8 sm:pb-32 ${karla.className} px-4 xl:px-0`}
+    >
       <title>{props.frontMatter.title}</title>
 
       <Navigation name={props.name} />
