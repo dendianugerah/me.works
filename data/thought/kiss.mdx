@@ -1,0 +1,41 @@
+---
+title: Keep It Simple, Stupid!
+description: It helps you find workspaces that suit your needs, whether you're freelancing, running a business, or working remotely, making work more convenient and productive for Indonesians.
+---
+
+The fundamental principle of the design is <b>straightforward: simplicity</b>. Although it may seem straightforward, there are numerous ways to overcomplicate a concept. However, there is typically only one concise and precise way to describe it. Simplifying things is not enough; it's also important to take a step back and consider the perspective of someone who knows nothing about it. This can be observed when writing code and reviewing it months later, where many lines may be incomprehensible because the concepts were not simplified.
+
+<br />
+
+Another mistake that is often made dealing with the KISS principle is that people try to make code as short as possible. But the shortest solution is rather seldom the easiest to read. Consider the following "Non-KISS" example:
+
+<div className="bg-[#f5f5f5] px-4">
+```
+
+f = lambda x: 1 if x <= 1 else x \* f(x - 1)
+
+```
+</div>
+
+<br />
+Now look at this version:
+
+<div className="bg-[#f5f5f5] px-4">
+
+```
+
+def faculty(number: int) -> int:
+  if number <= 1:
+    return 1
+  else:
+return number \* faculty(number - 1)
+
+```
+
+</div>
+
+<br />
+Certainly, the initial version is comprehensible, but it's significantly more challenging to grasp. However, incorporating some explanatory names, specifying the types of variables, and breaking the sentence into multiple lines make it noticeably simpler to read. When designing, the primary objective should always be to make it as clear and straightforward as feasible. One of the typical bad habits among programmers is to create complex and illegible "one-liners," which serves no purpose. It is highly likely that this approach will cause difficulties for others, if not for the programmer themselves, in understanding the code.
+
+
+```

@@ -1,20 +1,26 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Project from "@/pages/project";
+import Thought from "@/pages/thought";
 import { Karla } from "next/font/google";
-import { Navigation, About } from "@/components/layout/_index";
-import { ProjectDefinition, ProfileDefinition } from "@/definition";
+import { Navigation, About, Footer } from "@/components/layout/_index";
+import {
+  ProjectDefinition,
+  ProfileDefinition,
+  ThoughtDefinition,
+} from "@/definition";
 import { Application } from "@splinetool/runtime";
 import { useEffect } from "react";
-import Link from "next/link";
 const karla = Karla({ preload: false });
 
 export default function Home({
   profile,
   projects,
+  thought,
 }: {
   profile: ProfileDefinition;
   projects: ProjectDefinition[];
+  thought: ThoughtDefinition[];
 }) {
   const { name, introduction, background, about, awards } = profile;
 
@@ -37,39 +43,18 @@ export default function Home({
             <canvas id="canvas3d" className="w-full h-full" />
           </div> */}
           <Project projects={projects} />
-          <h2 className="mt-16 text-xl sm:text-4xl">
-            These projects are just a snapshot of my recent work. I&apos;d love
-            to show you a wider range in person. <b>Don&apos;t be a stranger</b>
-            , we can meet up for coffee or tea — your choice!
-          </h2>
-          <span className=" text-[#7a7a87] flex flex-col flex-wrap items-start">
-            <Link
-              href="https://www.linkedin.com/in/dendianugerah/"
-              target="_blank"
-              className="hover:underline"
-            >
-              LinkedIn
-            </Link>
-            <Link
-              href="https://github.com/dendianugerah"
-              target="_blank"
-              className="hover:underline"
-            >
-              Github
-            </Link>
-            <Link
-              href="mailto:dendianugrah40@gmail.com"
-              className="hover:underline"
-            >
-              Email
-            </Link>
-          </span>
         </div>
       </div>
       <div className="pt-16">
         <div className="max-w-7xl mx-auto">
           <About background={background} about={about} awards={awards} />
         </div>
+      </div>
+      <div className="pb-8 sm:pb-32 px-4 xl:px-0">
+        <Thought writings={thought} />
+      </div>
+      <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 xl:px-0">
+        <Footer />
       </div>
     </main>
   );
@@ -96,6 +81,20 @@ export async function getStaticProps() {
     };
   });
 
+  const thoughtFiles = fs
+    .readdirSync("data/thought")
+    .filter((file) => file.endsWith(".mdx"));
+
+  const thought = thoughtFiles.map((file) => {
+    const fileData = fs.readFileSync(`data/thought/${file}`);
+    const { data } = matter(fileData);
+
+    return {
+      title: data.title,
+      slug: file.split(".")[0],
+    };
+  });
+
   const profileFile = fs.readFileSync("data/profile.mdx", "utf-8");
   const { data } = matter(profileFile);
 
@@ -111,6 +110,7 @@ export async function getStaticProps() {
     props: {
       profile,
       projects,
+      thought,
     },
   };
 }

@@ -9,11 +9,11 @@ export function About({ background, about, awards }: AboutDefinition) {
       </div>
       <div className="flex flex-row gap-10 mb-16" id="about_content">
         <div>
-          <h2 className="mb-3 text-lg">Achievement</h2>
+          <h2 className="mb-3 text-lg">Others</h2>
           <p className="max-w-lg text-[#7a7a87]">{awards}</p>
         </div>
         <div>
-          <h2 className="mb-3 text-lg">Thought</h2>
+          <h2 className="mb-3 text-lg">Blurb</h2>
         </div>
       </div>
     </section>

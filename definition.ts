@@ -23,3 +23,8 @@ export interface ProfileDefinition {
   about: string;
   awards: string;
 }
+
+export interface ThoughtDefinition {
+  title: string;
+  slug: string;
+}
