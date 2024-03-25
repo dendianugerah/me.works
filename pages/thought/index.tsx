@@ -9,9 +9,11 @@ interface ThoughtProps {
 
 export default function Thought({ writings }: ThoughtProps) {
   return (
-    <div className="flex flex-col max-w-7xl mx-auto">
-      <span className="text-xl sm:text-4xl">Talks & writing</span>
-      <span>A collection of talks, articles, and experimental.</span>
+    <div className="max-w-7xl mx-auto">
+      <section className="mb-2 flex flex-col ">
+        <span className="text-xl sm:text-4xl">Talks & writing</span>
+        <span>A collection of talks, articles, and experimental.</span>
+      </section>
       <div className="flex flex-col flex-wrap items-start text-[#7a7a87]">
         {writings.map((writing, index) => (
           <Link
