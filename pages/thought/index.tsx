@@ -31,7 +31,7 @@ export async function getStaticProps() {
   let files = fs.readdirSync("data/thought");
   files = files.filter((file) => file.endsWith(".mdx"));
 
-  const writing = files.map((file) => {
+  const writings = files.map((file) => {
     const fileData = fs.readFileSync(`data/thought/${file}`);
     const { data } = matter(fileData);
 
@@ -41,11 +41,9 @@ export async function getStaticProps() {
     };
   });
 
-  console.log("WRITING", writing);
-
   return {
     props: {
-      writing,
+      writings,
     },
   };
 }
