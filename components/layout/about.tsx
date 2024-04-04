@@ -2,19 +2,22 @@ import { AboutDefinition } from "@/definition";
 
 export function About({ background, about, awards }: AboutDefinition) {
   return (
-    <section className="flex flex-col sm:py-8 mx-4 sm:mx-24" id="about">
+    <section
+      className="flex flex-col max-w-4xl py-12 px-4 sm:px-6 lg:px-8 xl:px-0"
+      id="about"
+    >
       <div className="mb-16" id="about_text">
-        <h2 className="mb-3 text-lg">{background}</h2>
+        <h2 className="mb-3 text-lg font-bold tracking-tight sm:text-4xl">{background}</h2>
         <p className="max-w-2xl text-[#7a7a87]">{about}</p>
       </div>
-      <div className="flex flex-row gap-10 mb-16" id="about_content">
+      <div className="flex flex-row gap-10" id="about_content">
         <div>
-          <h2 className="mb-3 text-lg">Others</h2>
+          <h2 className="mb-3">Others</h2>
           <p className="max-w-lg text-[#7a7a87]">{awards}</p>
         </div>
-        <div>
+        {/* <div>
           <h2 className="mb-3 text-lg">Blurb</h2>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ interface ProjectCardsProps {
 
 export default function Project({ projects }: ProjectCardsProps) {
   return (
-    <div className="md:flex md:flex-wrap md:gap-16 md:justify-between ">
+    <div className="md:flex md:flex-wrap md:gap-16 md:justify-between max-w-7xl mx-auto">
       {projects.map((project, index) => (
         <ProjectCard
           size={index % 4 === 0 || index % 4 === 3 ? "small" : "large"}
