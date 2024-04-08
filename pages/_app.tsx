@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>R. Dendi Anugerah Candra Diningrat</title>
+        <title>Dendi Anugerah Candra Diningrat</title>
       </Head>
       <Component {...pageProps} />
     </>
