@@ -50,10 +50,10 @@ export default function Home({
           <About background={background} about={about} awards={awards} />
         </div>
       </div>
-      <div className="pb-8 sm:pb-32 px-4 xl:px-0">
+      <div className="px-4 xl:px-0">
         <Thought writings={thought} />
       </div>
-      <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 xl:px-0">
+      <div className="pb-8 sm:pb-32 px-4 xl:px-0">
         <Footer />
       </div>
     </main>

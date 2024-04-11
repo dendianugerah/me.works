@@ -11,7 +11,7 @@ export default function Thought({ writings }: ThoughtProps) {
   return (
     <div className="max-w-7xl mx-auto">
       <section className="mb-2 flex flex-col ">
-        <div className="max-w-4xl py-12">
+        <div className="max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-lg font-bold tracking-tight sm:text-4xl">
