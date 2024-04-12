@@ -35,9 +35,13 @@ export default function Home({
       <div className="bg-[#f5f5f5] pb-8 sm:pb-32 px-4 xl:px-0">
         <div className="max-w-7xl mx-auto">
           <Navigation name={name} />
-          <div className="flex flex-col justify-center items-center text-center whitespace-pre-wrap max-w-6xl mx-auto">
-            <span className="text-[10px] sm:text-xl">Hello.</span>
-            <span className="text-xl sm:text-4xl">{introduction}</span>
+          <div className="flex flex-col justify-center items-center text-center whitespace-pre-wrap max-w-6xl mx-auto py-20">
+            <span className="text-[10px] sm:text-xl">Hello👋.</span>
+            {/* <span className="text-xl sm:text-4xl">{introduction}</span> */}
+            <span className="text-xl sm:text-4xl">
+              I&apos;m Dendi, a <b>software engineer</b>, and{" "}
+              <b>human interface design</b> enthusiast. Living in Indonesia
+            </span>
           </div>
           {/* <div className="flex justify-center items-center mt-4">
             <canvas id="canvas3d" className="w-full h-full" />

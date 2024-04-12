@@ -8,7 +8,7 @@ export function About({ background, about, awards }: AboutDefinition) {
     >
       <div className="mb-16" id="about_text">
         <h2 className="mb-3 text-lg font-bold tracking-tight sm:text-4xl">{background}</h2>
-        <p className="max-w-2xl text-[#7a7a87]">{about}</p>
+        <p className="max-w-2xl">{about}</p>
       </div>
       <div className="flex flex-row gap-10" id="about_content">
         {/* <div>

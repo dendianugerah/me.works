@@ -15,13 +15,13 @@ export default function Thought({ writings }: ThoughtProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-lg font-bold tracking-tight sm:text-4xl">
-                Talks & writing
+                Thoughts
               </h2>
               <span>
-                A collection of talks (soon), articles, and experimental.
+                A collection of thoughts includes articles and experiments.
               </span>
             </div>
-            <div className="flex flex-col flex-wrap items-start">
+            <div className="flex flex-col flex-wrap items-start sm:ml-8">
               {writings.map((writing, index) => (
                 <Link
                   href={`/thought/${writing.slug}`}
