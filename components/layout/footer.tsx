@@ -6,8 +6,8 @@ const karla = Karla({ preload: false });
 
 export function Footer({ children }: { children?: React.ReactNode }) {
   return (
-    <nav className={`${karla.className} max-w-7xl mx-auto pt-16 `}>
-      <h2 className="text-xl sm:text-4xl">
+    <nav className={`${karla.className} max-w-7xl mx-auto pt-8 `}>
+      <h2>
         These projects are just a snapshot of my several works. I&apos;d love to
         show you a broader range in person. <b>Don&apos;t be a stranger</b>, we
         can meet up for coffee or tea — it&apos;s your choice!

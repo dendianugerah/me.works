@@ -18,9 +18,14 @@ export function Navigation({
           {name}
         </Link>
 
-        <Link href="/#about" className="mr-4 text-[#7a7a87]">
-          About & Things
-        </Link>
+        <div className="flex">
+          <Link href="/#about" className="mr-4 text-[#7a7a87] text-sm sm:text-[16px]">
+            About & Things
+          </Link>
+          <Link href="/thought" className="text-[#7a7a87] text-sm sm:text-[16px]">
+            Thought
+          </Link>
+        </div>
       </section>
       {children}
     </nav>

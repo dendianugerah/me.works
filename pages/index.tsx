@@ -9,8 +9,6 @@ import {
   ProfileDefinition,
   ThoughtDefinition,
 } from "@/definition";
-import { Application } from "@splinetool/runtime";
-import { useEffect } from "react";
 const karla = Karla({ preload: false });
 
 export default function Home({
@@ -23,12 +21,6 @@ export default function Home({
   thought: ThoughtDefinition[];
 }) {
   const { name, introduction, background, about, awards } = profile;
-
-  // useEffect(() => {
-  //   const canvas = document.getElementById("canvas3d");
-  //   const app = new Application(canvas as HTMLCanvasElement);
-  //   app.load("https://prod.spline.design/RWop9YYzBLiGqqOu/scene.splinecode");
-  // }, []);
 
   return (
     <main className={`${karla.className}`}>
@@ -43,9 +35,6 @@ export default function Home({
               <b>human interface design</b> enthusiast. Living in Indonesia
             </span>
           </div>
-          {/* <div className="flex justify-center items-center mt-4">
-            <canvas id="canvas3d" className="w-full h-full" />
-          </div> */}
           <Project projects={projects} />
         </div>
       </div>
@@ -54,9 +43,9 @@ export default function Home({
           <About background={background} about={about} awards={awards} />
         </div>
       </div>
-      <div className="px-4 xl:px-0">
+      {/* <div className="px-4 xl:px-0">
         <Thought writings={thought} />
-      </div>
+      </div> */}
       <div className="pb-8 sm:pb-32 px-4 xl:px-0">
         <Footer />
       </div>
@@ -85,19 +74,19 @@ export async function getStaticProps() {
     };
   });
 
-  const thoughtFiles = fs
-    .readdirSync("data/thought")
-    .filter((file) => file.endsWith(".mdx"));
+  // const thoughtFiles = fs
+  //   .readdirSync("data/thought")
+  //   .filter((file) => file.endsWith(".mdx"));
 
-  const thought = thoughtFiles.map((file) => {
-    const fileData = fs.readFileSync(`data/thought/${file}`);
-    const { data } = matter(fileData);
+  // const thought = thoughtFiles.map((file) => {
+  //   const fileData = fs.readFileSync(`data/thought/${file}`);
+  //   const { data } = matter(fileData);
 
-    return {
-      title: data.title,
-      slug: file.split(".")[0],
-    };
-  });
+  //   return {
+  //     title: data.title,
+  //     slug: file.split(".")[0],
+  //   };
+  // });
 
   const profileFile = fs.readFileSync("data/profile.mdx", "utf-8");
   const { data } = matter(profileFile);
@@ -114,7 +103,7 @@ export async function getStaticProps() {
     props: {
       profile,
       projects,
-      thought,
+      // thought,
     },
   };
 }
